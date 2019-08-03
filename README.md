@@ -3,5 +3,5 @@ Analysis of Gradient Methods, including Conjugate Gradient, Momentum, RMSProp, a
 
 
 ## Demo (GD + Momentum) ##
-![alt text](https://github.com/danielenricocahall/Gradient-Methods-Analysis/blob/master/sgd_momentum_demo.gif)
+![alt text](https://github.com/danielenricocahall/Gradient-Methods-Analysis/blob/master/Demos/gd_momentum_demo.gif)
 
