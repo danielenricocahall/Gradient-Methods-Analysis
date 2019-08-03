@@ -9,7 +9,7 @@ from math import sqrt
 
 eps = 1e-6
 delta = 1e-6
-MAX_ITER = 500
+MAX_ITER = 100000
 def f(x):
     return  (np.square(x) / 10) - 2*np.sin(x)
 
@@ -18,11 +18,11 @@ def df(x):
     return (f(x) - f(x - delta))/delta
 
 def main():
-    x_0 = -10;
-    a = 0.5;
+    x_0 = -13;
+    a = 0.1;
     x_k = x_0;
-    B_1 = 0.9;
-    B_2 = 0.99;
+    B_1 = 0.99;
+    B_2 = 0.999;
     path = []
     path.append((x_0, f(x_0)))
     i = 0

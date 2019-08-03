@@ -11,7 +11,7 @@ eps = 1e-6
 delta = 1e-6
 MAX_ITER = 500
 def f(x):
-    return np.square(x) - 4*x
+    return np.square(x) / 10 - 2*np.sin(x)
 
 
 def df(x):
@@ -19,12 +19,12 @@ def df(x):
 
 def main():
     x_0 = -10;
-    a = 0.5;
+    a = 0.1;
     x_k = x_0;
     path = []
     path.append((x_0, f(x_0)))
     i = 0
-    B = 0.9
+    B = 0.99
     d_k = df(x_k)**2
     while True:
         d_k = B * d_k + (1 - B) * (df(x_k)**2)

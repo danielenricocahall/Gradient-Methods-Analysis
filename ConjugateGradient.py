@@ -10,7 +10,8 @@ eps = 1e-6
 delta = 1e-6
 MAX_ITER = 500
 def f(x):
-    return np.square(x) - 4*x
+    #return np.square(x) - 4*x
+    return np.square(x) / 10 - 2*np.sin(x)
 
 def df(x):
     return (f(x) - f(x - delta))/delta
@@ -18,14 +19,14 @@ def df(x):
 
 
 def main():
-    x_0 = -10;
+    x_0 = -13;
     x_k = x_0;
     path = []
     path.append((x_0, f(x_0)))
     i = 0
     d_k = df(x_k)
     betas = []
-    a = 0.1
+    a = 0.5
     k = []
     while True:
         prev_grad = df(x_k)
