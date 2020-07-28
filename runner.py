@@ -3,17 +3,9 @@ import matplotlib.pyplot as plt
 
 from optimizer import Optimizer
 
-eps = 1e-3
-delta = 1e-6
-MAX_ITER = 500
-
 
 def f(x):
     return np.square(x) / 10 - 2 * np.sin(x)
-
-
-def df(x):
-    return (f(x) - f(x - delta)) / delta
 
 
 def main():
