@@ -67,11 +67,6 @@ class RMSProp(Optimizer):
 class Adam(Optimizer):
     name = 'adam'
 
-    def __init__(self):
-        super().__init__()
-        self.momentum = Momentum()
-        self.rms_prop = RMSProp()
-
     def optimize(self, x_k, f, a, **kwargs):
         B_1 = kwargs.get('B_1', 0.99)
         B_2 = kwargs.get('B_2', 0.999)
