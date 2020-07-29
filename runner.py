@@ -13,13 +13,11 @@ def main():
     a = 0.01
 
     opt = Optimizer.get_optimizer('conjugate_gradient')
-    path = opt.run(x_0, f, a)
-    foo, bar = zip(*path)
-    x_f = foo[-1]
+    x = opt.run(x_0, f, a)
+    x_f = x[-1]
 
-    x = np.linspace(-20, 20, 200)
-    plt.plot(x, f(x))
-    plt.plot(foo, bar, label='f($x_k$)')
+    plt.plot(np.linspace(-20, 20, 200), f(np.linspace(-20, 20, 200)))
+    plt.plot(x, [f(x_k) for x_k in x], label='f($x_k$)')
     plt.plot(x_f, f(x_f), 'ro')
     plt.xlabel("x")
     plt.ylabel("f(x)")

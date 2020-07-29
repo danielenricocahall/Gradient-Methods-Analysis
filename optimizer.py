@@ -18,11 +18,10 @@ class Optimizer:
     def run(self, x_0, f, a, **kwargs):
         x_k = x_0
         i = 0
-        path = [(x_0, f(x_0))]
+        path = [x_0]
         while abs(df(f, x_k) / df(f, x_0)) > eps and i < MAX_ITER:
-            print(i)
             x_k = self.optimize(x_k, f, a=a, **kwargs)
-            path.append((x_k, f(x_k)))
+            path.append(x_k)
             i = i + 1
 
         print(f"It took {i} iterations to converge!", flush=True)
