@@ -60,6 +60,7 @@ class RMSProp(Optimizer):
         d_k = getattr(self, 'd_k', df(f, x_k) ** 2)
         d_k = B * d_k + (1 - B) * (df(f, x_k) ** 2)
         x_k = x_k - a * df(f, x_k) / sqrt(d_k + eps)
+        self.d_k = d_k
         return x_k
 
 
