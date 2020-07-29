@@ -20,7 +20,7 @@ class Optimizer:
         i = 0
         path = [x_0]
         while abs(df(f, x_k) / df(f, x_0)) > eps and i < MAX_ITER:
-            x_k = self.optimize(x_k, f, a=a, **kwargs)
+            x_k = self.optimize(x_k, f, a, **kwargs)
             path.append(x_k)
             i = i + 1
 
