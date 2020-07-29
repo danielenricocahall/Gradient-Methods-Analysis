@@ -12,7 +12,7 @@ def main():
     x_0 = -13
     a = 0.01
 
-    opt = Optimizer.get_optimizer('conjugate_gradient')
+    opt = Optimizer.get_optimizer('sgd')
     x = opt.run(x_0, f, a)
     x_f = x[-1]
 
