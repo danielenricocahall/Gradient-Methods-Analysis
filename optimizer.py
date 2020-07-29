@@ -16,6 +16,7 @@ class Optimizer:
         return next(cl for cl in cls.__subclasses__() if cl.name == name)()
 
     def run(self, x_0, f, a, **kwargs):
+        x_k = x_0
         i = 0
         x = [x_0]
         while abs(df(f, x_k) / df(f, x_0)) > eps and i < MAX_ITER:
