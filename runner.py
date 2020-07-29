@@ -10,9 +10,9 @@ def f(x):
 
 def main():
     x_0 = -13
-    a = 0.01
+    a = 0.1
 
-    opt = Optimizer.get_optimizer('sgd')
+    opt = Optimizer.get_optimizer('rms_prop')
     x = opt.run(x_0, f, a)
     x_f = x[-1]
 

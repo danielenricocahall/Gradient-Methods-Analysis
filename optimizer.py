@@ -16,17 +16,16 @@ class Optimizer:
         return next(cl for cl in cls.__subclasses__() if cl.name == name)()
 
     def run(self, x_0, f, a, **kwargs):
-        x_k = x_0
         i = 0
-        path = [x_0]
+        x = [x_0]
         while abs(df(f, x_k) / df(f, x_0)) > eps and i < MAX_ITER:
             x_k = self.optimize(x_k, f, a, **kwargs)
-            path.append(x_k)
+            x.append(x_k)
             i = i + 1
 
         print(f"{self.name} took {i} iterations to converge!")
         print(f"The optimal value occurs at {round(x_k, 2)} where the value of the function is {round(f(x_k), 2)}")
-        return path
+        return x
 
     def optimize(self, x_k, f, a, **kwargs):
         pass
