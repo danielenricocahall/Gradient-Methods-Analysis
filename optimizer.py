@@ -24,7 +24,7 @@ class Optimizer:
             path.append(x_k)
             i = i + 1
 
-        print(f"It took {i} iterations to converge!", flush=True)
+        print(f"It took {i} iterations to converge!")
         print(f"The optimal value occurs at {round(x_k, 2)} where the value of the function is {round(f(x_k), 2)}")
         return path
 
