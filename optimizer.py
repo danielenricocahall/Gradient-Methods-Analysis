@@ -1,4 +1,6 @@
+from abc import ABC, abstractmethod
 from math import sqrt
+
 
 eps = 1e-6
 delta = 1e-6
@@ -9,7 +11,8 @@ def df(f, x):
     return (f(x) - f(x - delta)) / delta
 
 
-class Optimizer:
+class Optimizer(ABC):
+    name = None
 
     @classmethod
     def get_optimizer(cls, name):
@@ -27,9 +30,13 @@ class Optimizer:
         print(f"{self.name} took {i} iterations to converge!")
         print(f"The optimal value occurs at {round(x_k, 2)} where the value of the function is {round(f(x_k), 2)}")
         return x
-
+    
+    @abstractmethod
     def optimize(self, x_k, f, a, **kwargs):
         pass
+    
+    def __str__(self):
+        return self.name
 
 
 class SGD(Optimizer):
